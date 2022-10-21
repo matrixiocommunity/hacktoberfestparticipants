@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css" />
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <title>Hactoberfest 22'</title>
+  </head>
+  <body>
+    <div class="flex-container">
+      <img
+        style="height: auto; width: 20rem"
+        src="https://user-images.githubusercontent.com/100709956/195295606-1601c2fb-cf30-4e63-b7a9-c29b966aabc9.png"
+        alt="Hacktoberfest"
+      />
+      <div>
+        <br />
+        <a class="t1" href="#">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          WE LOVE
+        </a>
+        <a class="t2" href="#">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          OPEN SOURCE!
+        </a>
+      </div>
+      <table style="background-color: white" id="participants">
+        <tr>
+          <th>Name</th>
+          <th>User Name</th>
+        </tr>
+      </table>
+      <div>
+        <br />
+      </div>
+    </div>
+    <script>
+      $(document).ready(function () {
+        // FETCHING DATA FROM JSON FILE
+        $.getJSON("data.json", function (data) {
+          var participant = "";
+
+          // ITERATING THROUGH OBJECTS
+          $.each(data, function (key, value) {
+            // DATA FROM JSON OBJECT
+            participant += "<tr>";
+            participant += "<td>" + value.name + "</td>";
+
+            participant += "<td>" + value.username + "</td>";
+
+            participant += "</tr>";
+          });
+
+          //INSERTING ROWS INTO TABLE
+          $("#participants").append(participant);
+        });
+      });
+    </script>
+  </body>
+</html>
