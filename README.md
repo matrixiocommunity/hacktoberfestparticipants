@@ -10,10 +10,10 @@ $ git clone https://github.com/matrixiocommunity/hacktoberfestparticipants.git
 $ cd hacktoberfest-participants
 ```
 
-#### 2. Adding your quote
+#### 2. Adding your name and username
 
 1. Open the `data.json` file in your text editor/IDE.
-2. Add your quote in JSON format. For example:
+2. Add your detials in JSON format. For example:
 
 ```js
  {
